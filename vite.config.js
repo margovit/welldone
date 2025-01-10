@@ -22,9 +22,17 @@ export default defineConfig(({ command }) => {
           },
           entryFileNames: 'commonHelpers.js',
         },
+        external: ['axios'], // Vyloučení Axios, pokud nechcete bundlovat
+      },
+      commonjsOptions: {
+        include: /node_modules/, 
+        transformMixedEsModules: true, 
       },
       outDir: '../dist',
     },
-    plugins: [injectHTML(), FullReload(['./src/**/**.html'])],
+    plugins: [
+      injectHTML(),
+      FullReload(['./src/**/**.html']),
+    ],
   };
 });
