@@ -1,0 +1,60 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: black;
+  margin: 0;
+  font-family: Arial;
+  overflow: hidden;
+}
+
+a {
+  color: #ffffff;
+}
+
+#info {
+  position: absolute;
+  width: 100%;
+  color: #E15027;
+  padding: 5px;
+  margin-top: 20px;
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#menu {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+button {
+  color: rgba(225, 80, 39, 0.75);
+  background: transparent;
+  outline: 1px solid rgba(225, 80, 39, 0.75);
+  border: 1px solid rgba(225, 80, 39, 0.75);
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #E15027;
+  color: #1C1B20;
+}
+
+button:active {
+  color: #E15027;
+  background-color:#1C1B20;
+}
+
+.btn-logout {
+  position: absolute;
+  z-index: 999;
+  right: 20px;
+  top: 20px;
+}

@@ -1,0 +1,87 @@
+.element {
+  width: 140px;
+  height: 180px;
+  box-shadow: 0px 0px 20px rgba(225, 80, 39, 0.5);
+  cursor: pointer;
+  overflow: hidden;
+  border: 1px solid var(--borderMain);
+  border-radius: 20px;
+  background-color: var(--backgroundMain);
+}
+
+.element:hover {
+  box-shadow: 0px 0px 20px rgba(225, 80, 39, 0.75);
+  border: 1px solid rgba(225, 80, 39, 0.75);
+}
+
+.element .number {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 20px;
+  color: rgba(225, 80, 39, 0.75);
+}
+
+.element .name {
+  position: absolute;
+  top: 40px;
+  width: 100%;
+  font-size: 70px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: bold;
+
+  -webkit-filter: drop-shadow(0px 0px 20px rgba(225, 80, 39, 0.95));
+  -moz-filter: drop-shadow(0px 0px 20px rgba(225, 80, 39, 0.95));
+  -o-filter: drop-shadow(0px 0px 20px rgba(225, 80, 39, 0.95));
+  -ms-filter: drop-shadow(0px 0px 20px rgba(225, 80, 39, 0.95));
+  filter: drop-shadow(0px 0px 20px rgba(225, 80, 39, 0.95));
+}
+
+.element .details {
+  position: absolute;
+  top: 125px;
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
+  color: rgba(225, 80, 39, 0.75);
+}
+
+.element.desc::before {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  left: -50%;
+  top: -50%;
+  width: 200%;
+  height: 200%;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 50% 50%, 50% 50%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  background-image: linear-gradient(var(--accent), var(--accent)),
+    linear-gradient(var(--borderMain), var(--borderMain)),
+    linear-gradient(var(--accent), var(--accent)),
+    linear-gradient(var(--borderMain), var(--borderMain));
+  animation: rotate 4s linear infinite;
+}
+
+.element.desc::after {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  left: 1px;
+  top: 1px;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  background: var(--backgroundMain);
+  border-radius: 20px;
+  transition: height var(--transition);
+  transition: width var(--transition);
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(1turn);
+  }
+}
